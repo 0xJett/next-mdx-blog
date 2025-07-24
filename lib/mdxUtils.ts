@@ -32,7 +32,7 @@ export function getArticleData(slug: string) {
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data: frontmatter, content } = matter(fileContent);
 
-  // 获取文件的统计信息
+  // get file createdAT & updatedAt
   const stats = fs.statSync(filePath);
   const createdAt = stats.birthtimeMs;
   const updatedAt = stats.mtimeMs;
@@ -45,15 +45,11 @@ export function getArticleData(slug: string) {
   };
 }
 
-// // 获取所有文章的前置元数据 (用于列表页)
-// export function getAllPosts() {
-//   const slugs = getAllPostSlugs();
-//   return slugs
-//     .map((slug) => {
-//       const { frontmatter } = getPostData(slug);
-//       return { slug, frontmatter };
-//     })
-//     .sort(
-//       (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-//     );
-// }
+// get All local articles metadata
+export function getAllPosts() {
+  const slugs = getAllArticleSlugs();
+  return slugs.map((slug) => {
+    const { frontmatter, createdAt, updatedAt } = getArticleData(slug);
+    return { frontmatter, createdAt, updatedAt };
+  });
+}

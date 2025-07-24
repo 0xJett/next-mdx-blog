@@ -15,7 +15,6 @@ export default async function Page({
 
   try {
     const { frontmatter, content, createdAt, updatedAt } = getArticleData(slug);
-    console.log(frontmatter, content, createdAt, updatedAt);
 
     const options: EvaluateOptions = {
       parseFrontmatter: true,
