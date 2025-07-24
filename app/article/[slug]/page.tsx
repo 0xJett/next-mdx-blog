@@ -1,7 +1,9 @@
+import { getAllArticleSlugs, getArticleData } from "@/lib/mdxUtils";
+import { EvaluateOptions, MDXRemote } from "next-mdx-remote-client/rsc";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return [{ slug: "welcome" }, { slug: "about" }];
+  return getAllArticleSlugs();
 }
 
 export default async function Page({
@@ -10,9 +12,17 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
   try {
-    const { default: Post } = await import(`@/articles/${slug}.mdx`);
-    return <Post />;
+    const { frontmatter, content, createdAt, updatedAt } = getArticleData(slug);
+    console.log(frontmatter, content, createdAt, updatedAt);
+
+    const options: EvaluateOptions = {
+      parseFrontmatter: true,
+      scope: frontmatter,
+    };
+
+    return <MDXRemote source={content} options={options} />;
   } catch (error) {
     return notFound();
   }
