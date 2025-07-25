@@ -7,7 +7,7 @@ This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https
 [ ] support CMS managed MD & MDX article
 [ ] category
 [ ] tag
-[ ] timeline
+[ ] archiving
 [ ] dark mode
 [ ] private article
 [ ] multiple language
@@ -33,7 +33,7 @@ After these steps, you can visit the project on `localhost:3000`, also you can v
 
 ## Write Article Locally
 1. Create articles in the articles folder under the root directory.
-2. visit `localhost:3000/article/${your article name}`
+2. visit `localhost:3000/article/${your article name}`,
 
 You can set the article params on the top of the article by using this grammar, set the params correctly will improve SEO effectiveness.
 ```markdown
