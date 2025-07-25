@@ -1,4 +1,4 @@
-import { SITE_CONFIG } from "@/config";
+import { DEFAULT_METADATA } from "@/constants";
 import { getAllArticleSlugs, getArticleData } from "@/lib/mdxUtils";
 import { Metadata } from "next";
 import { EvaluateOptions, MDXRemote } from "next-mdx-remote-client/rsc";
@@ -24,14 +24,11 @@ export async function generateMetadata({
       description: frontmatter?.description,
       keywords: frontmatter.keywords,
       authors: {
-        name: frontmatter?.author || SITE_CONFIG.author,
+        name: frontmatter?.author || process.env.AUTHOR,
       },
     };
   } catch (error) {
-    return {
-      title: SITE_CONFIG.title,
-      description: SITE_CONFIG.description,
-    };
+    return DEFAULT_METADATA;
   }
 }
 
