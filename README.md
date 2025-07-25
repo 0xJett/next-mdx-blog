@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# next-mdx-blog
+This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/home), [Tailwind CSS](https://tailwindcss.com/), [Supabase on Vercel](https://vercel.com/jett-projects/~/integrations/supabase)(Optional).
 
-## Getting Started
+## Features
+[x] write MD & MDX articles directly in articles directory
+[x] frontmatter supported
+[ ] dark mode
+[ ] private article
+[ ] support CMS managed MD & MDX article
+[ ] multiple language
+[ ] multiple templates
 
-First, run the development server:
+## Configurations
+You can config you site manually.
+Below are the supported params, all of the params are optional, but you'd better set the author param.
+|key|type|default value|
+|---|---|---|
+|title|string|''|
+|description|string|''|
 
+## Running Locally
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone git@github.com:0xJett/next-mdx-blog.git
+cd next-mdx-blog
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After these steps, you can visit the project on `localhost:3000`, also you can visit `localhost:3000/article/example` to see the example article.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Write Article Locally
+1. Create articles in the articles folder under the root directory.
+2. visit `localhost:3000/article/${your article name}`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+You can set the article params on the top of the article by using this grammar, set the params correctly will improve SEO effectiveness.
+```markdown
+---
+title: Example article
+description: This is the description of the article
+keywords: ['example', 'english']
+author: 0xJett
+---
+```
 
 ## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. use the Github OAuth method to create an account on vercel
+2. import the project into vercel
+3. deploy the project
+4. open the deployed link on Overview panel
