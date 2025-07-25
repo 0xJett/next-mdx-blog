@@ -1,12 +1,15 @@
 # next-mdx-blog
-This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/home), [Tailwind CSS](https://tailwindcss.com/), [Supabase on Vercel](https://vercel.com/jett-projects/~/integrations/supabase)(Optional).
+This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/home), [Tailwind CSS](https://tailwindcss.com/), [Supabase on Vercel](https://vercel.com/jett-projects/~/integrations/supabase)(Optional if you want to manage your articles in a CMS).
 
 ## Features
 [x] write MD & MDX articles directly in articles directory
 [x] frontmatter supported
+[ ] support CMS managed MD & MDX article
+[ ] category
+[ ] tag
+[ ] timeline
 [ ] dark mode
 [ ] private article
-[ ] support CMS managed MD & MDX article
 [ ] multiple language
 [ ] multiple templates
 
