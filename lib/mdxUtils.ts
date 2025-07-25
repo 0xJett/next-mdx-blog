@@ -32,7 +32,7 @@ export function getArticleData(slug: string) {
   const fileContent = fs.readFileSync(filePath, "utf8");
   const { data: frontmatter, content } = matter(fileContent);
 
-  // get file createdAT & updatedAt
+  // get file createdAt & updatedAt
   const stats = fs.statSync(filePath);
   const createdAt = stats.birthtimeMs;
   const updatedAt = stats.mtimeMs;

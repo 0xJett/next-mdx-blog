@@ -1,3 +1,4 @@
+import { SITE_CONFIG } from "@/config";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -13,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: process.env.SITE_TITLE,
-  description: process.env.SITE_DESCRIPTION,
+  title: SITE_CONFIG.title,
+  description: SITE_CONFIG.description,
 };
 
 export default function RootLayout({
