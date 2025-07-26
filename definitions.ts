@@ -1,3 +1,14 @@
+import { Author } from "next/dist/lib/metadata/types/metadata-types";
+
+/** site config */
+export type SiteConfig = {
+  title?: string;
+  description?: string;
+  author?: Author
+}
+/** ---end--- */
+
+
 /** article related */
 export type FrontMatter = {
   title?: string;
