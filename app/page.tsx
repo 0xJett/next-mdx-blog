@@ -13,7 +13,7 @@ export default function Home() {
               key={`${item.slug} + ${item.createdAt}`}
               className="flex flex-col gap-2"
             >
-              <Link href={`/article/${item.slug}`}>
+              <Link href={`/article/${item.slug}`} prefetch>
                 {item.frontmatter.title}
                 {item.frontmatter.description}
                 {item.frontmatter.author}
