@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 import { Author } from "next/dist/lib/metadata/types/metadata-types";
 
 /** site config */
@@ -33,6 +34,6 @@ export interface Article extends ArticleMeta {
 export type Menu = {
   title: string;
   link?: string;
-  icon?: string;
+  icon?: LucideIcon;
   children?: Menu[];
 };

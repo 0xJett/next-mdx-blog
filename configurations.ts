@@ -1,28 +1,45 @@
+import {
+  Archive,
+  ChartColumnStacked,
+  House,
+  Info,
+  Link,
+  PenTool,
+  Tag,
+} from "lucide-react";
 import { Menu, SiteConfig } from "./definitions";
 
 export const SITE_CONFIG: SiteConfig = {
   title: "Jett's Blog",
   description: "A blog powered by Next.js and MDX",
   author: {
-    name: "0xJett"
-  }
+    name: "0xJett",
+  },
 };
 
 export const MENUS: Array<Menu> = [
   {
     title: "Home",
     link: "/",
+    icon: House,
   },
   {
     title: "Article",
+    icon: PenTool,
     children: [
-      { title: "Archives", link: "/archive" },
-      { title: "Categories", link: "/category" },
-      { title: "Tags", link: "/tag" },
+      { title: "Archives", link: "/archive", icon: Archive },
+      { title: "Categories", link: "/category", icon: ChartColumnStacked },
+      { title: "Tags", link: "/tag", icon: Tag },
     ],
+  },
+  {
+    title: "About",
+    link: "/about",
+    icon: Info,
   },
   {
     title: "Friends",
     link: "/friends",
+    icon: Link,
   },
 ];

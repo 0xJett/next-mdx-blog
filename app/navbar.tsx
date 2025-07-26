@@ -8,8 +8,18 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { MENUS } from "@/configurations";
+import { Menu } from "@/definitions";
 import Link from "next/link";
 import { Fragment } from "react";
+
+function MenuContentRenderer({ menu }: { menu: Pick<Menu, "title" | "icon"> }) {
+  return (
+    <div className="flex items-center gap-1">
+      {menu.icon && <menu.icon className="size-4" />}
+      <span>{menu.title}</span>
+    </div>
+  );
+}
 
 export default function Navbar() {
   return (
@@ -19,7 +29,9 @@ export default function Navbar() {
           <NavigationMenuItem key={menu.title}>
             {menu.children ? (
               <>
-                <NavigationMenuTrigger>{menu.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger>
+                  <MenuContentRenderer menu={menu} />
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[120px] gap-2">
                     <li>
@@ -27,11 +39,13 @@ export default function Navbar() {
                         <Fragment key={child.title}>
                           {child.link ? (
                             <NavigationMenuLink asChild>
-                              <Link href={child.link}>{child.title}</Link>
+                              <Link href={child.link}>
+                                <MenuContentRenderer menu={child} />
+                              </Link>
                             </NavigationMenuLink>
                           ) : (
                             <NavigationMenuContent>
-                              {child.title}
+                              <MenuContentRenderer menu={child} />
                             </NavigationMenuContent>
                           )}
                         </Fragment>
@@ -45,10 +59,14 @@ export default function Navbar() {
                 asChild
                 className={navigationMenuTriggerStyle()}
               >
-                <Link href={menu.link}>{menu.title}</Link>
+                <Link href={menu.link}>
+                  <MenuContentRenderer menu={menu} />
+                </Link>
               </NavigationMenuLink>
             ) : (
-              <NavigationMenuContent>{menu.title}</NavigationMenuContent>
+              <NavigationMenuContent>
+                <MenuContentRenderer menu={menu} />
+              </NavigationMenuContent>
             )}
           </NavigationMenuItem>
         ))}
