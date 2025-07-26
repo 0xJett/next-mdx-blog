@@ -21,6 +21,7 @@ export default function SocialMedia() {
           return (
             <Link key={key} href={value} target="_blank">
               <Icon className="size-5" />
+              <span className="sr-only">{key}</span>
             </Link>
           );
         })}

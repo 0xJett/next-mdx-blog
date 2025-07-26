@@ -4,7 +4,7 @@ import {
   Info,
   Link,
   PenTool,
-  Tag
+  Tag,
 } from "lucide-react";
 import { Menu, SiteConfig, SocialMediaLinks } from "./definitions";
 
