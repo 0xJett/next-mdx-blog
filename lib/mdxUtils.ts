@@ -1,14 +1,15 @@
+import { Article, ArticleMeta } from "@/definitions";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
 
-const FILE_EXTENSIONS = ["md", "mdx"];
+const FILE_EXTENSIONS = [".md", ".mdx"];
 
 // local MDX directory
 const ARTICLES_DIRECTORY = path.join(process.cwd(), "articles");
 
 // get all local article slugs
-export function getAllArticleSlugs() {
+export function getAllArticleSlugs(): string[] {
   return fs
     .readdirSync(ARTICLES_DIRECTORY)
     .filter((file) => FILE_EXTENSIONS.includes(path.extname(file)))
@@ -16,11 +17,12 @@ export function getAllArticleSlugs() {
 }
 
 // get specified article slug
-export function getArticleData(slug: string) {
+export function getArticleData(slug: string): Article {
   let filePath;
 
   for (const ext of FILE_EXTENSIONS) {
-    const possiblePath = path.join(ARTICLES_DIRECTORY, `${slug}.${ext}`);
+    const possiblePath = path.join(ARTICLES_DIRECTORY, `${slug}${ext}`);
+
     if (fs.existsSync(possiblePath)) {
       filePath = possiblePath;
       break;
@@ -38,6 +40,7 @@ export function getArticleData(slug: string) {
   const updatedAt = stats.mtimeMs;
 
   return {
+    slug,
     frontmatter,
     content,
     createdAt,
@@ -46,10 +49,11 @@ export function getArticleData(slug: string) {
 }
 
 // get All local articles metadata
-export function getAllPosts() {
+export function getAllArticles(): ArticleMeta[] {
   const slugs = getAllArticleSlugs();
+
   return slugs.map((slug) => {
     const { frontmatter, createdAt, updatedAt } = getArticleData(slug);
-    return { frontmatter, createdAt, updatedAt };
+    return { slug, frontmatter, createdAt, updatedAt };
   });
 }

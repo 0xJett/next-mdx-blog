@@ -5,7 +5,9 @@ import { EvaluateOptions, MDXRemote } from "next-mdx-remote-client/rsc";
 import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
-  return getAllArticleSlugs();
+  const slugs = getAllArticleSlugs();
+
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -22,7 +24,7 @@ export async function generateMetadata({
     return {
       title: frontmatter?.title,
       description: frontmatter?.description,
-      keywords: frontmatter.keywords,
+      keywords: frontmatter?.keywords,
       authors: {
         name: frontmatter?.author || process.env.AUTHOR,
       },
@@ -40,7 +42,7 @@ export default async function Page({
   const { slug } = await params;
 
   try {
-    const { frontmatter, content, createdAt, updatedAt } = getArticleData(slug);
+    const { frontmatter, content } = getArticleData(slug);
 
     const options: EvaluateOptions = {
       parseFrontmatter: true,
@@ -52,3 +54,5 @@ export default async function Page({
     return notFound();
   }
 }
+
+export const dynamicParams = false;
