@@ -1,3 +1,3 @@
-export default function Archive() {
+export default function Page() {
   return <div>Archive</div>;
 }

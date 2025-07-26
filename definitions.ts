@@ -1,3 +1,4 @@
+/** article related */
 export type FrontMatter = {
   title?: string;
   description?: string;
@@ -15,3 +16,12 @@ export interface ArticleMeta {
 export interface Article extends ArticleMeta {
   content: string;
 }
+/** ---end--- */
+
+/** menu */
+export type Menu = {
+  title: string;
+  link?: string;
+  icon?: string;
+  children?: Menu[];
+};
