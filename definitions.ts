@@ -5,10 +5,14 @@ import { Author } from "next/dist/lib/metadata/types/metadata-types";
 export type SiteConfig = {
   title?: string;
   description?: string;
-  author?: Author
-}
-/** ---end--- */
+  author?: Author;
+};
 
+export type SocialMediaLinks = {
+  github?: string;
+  email?: string;
+};
+/** ---end--- */
 
 /** article related */
 export type FrontMatter = {

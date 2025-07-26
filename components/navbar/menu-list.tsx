@@ -21,7 +21,7 @@ function MenuContentRenderer({ menu }: { menu: Pick<Menu, "title" | "icon"> }) {
   );
 }
 
-export default function Navbar() {
+export default function MenuList() {
   return (
     <NavigationMenu viewport={false}>
       <NavigationMenuList>

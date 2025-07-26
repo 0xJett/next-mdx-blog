@@ -1,13 +1,12 @@
 import {
   Archive,
   ChartColumnStacked,
-  House,
   Info,
   Link,
   PenTool,
-  Tag,
+  Tag
 } from "lucide-react";
-import { Menu, SiteConfig } from "./definitions";
+import { Menu, SiteConfig, SocialMediaLinks } from "./definitions";
 
 export const SITE_CONFIG: SiteConfig = {
   title: "Jett's Blog",
@@ -18,11 +17,6 @@ export const SITE_CONFIG: SiteConfig = {
 };
 
 export const MENUS: Array<Menu> = [
-  {
-    title: "Home",
-    link: "/",
-    icon: House,
-  },
   {
     title: "Article",
     icon: PenTool,
@@ -43,3 +37,8 @@ export const MENUS: Array<Menu> = [
     icon: Link,
   },
 ];
+
+export const SOCIAL_MEDIA_LINKS: SocialMediaLinks = {
+  github: "https://github.com/0xJett",
+  email: "mailto:0xjettzhang@gmail.com",
+};
