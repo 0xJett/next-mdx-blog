@@ -2,16 +2,16 @@
 This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/home), [Tailwind CSS](https://tailwindcss.com/), [Supabase on Vercel](https://vercel.com/jett-projects/~/integrations/supabase)(Optional if you want to manage your articles in a CMS).
 
 ## Features
-[x] write MD & MDX articles directly in articles directory
-[x] frontmatter supported
-[ ] support CMS managed MD & MDX article
-[ ] category
-[ ] tag
-[ ] archiving
-[ ] dark mode
-[ ] private article
-[ ] multiple language
-[ ] multiple templates
+- [x] write MD & MDX articles directly in articles directory
+- [x] frontmatter supported
+- [ ] support CMS managed MD & MDX article
+- [ ] category
+- [ ] tag
+- [ ] archiving
+- [x] dark mode
+- [ ] private article
+- [ ] multiple language
+- [ ] multiple templates
 
 ## Configurations
 You can config you site manually.
