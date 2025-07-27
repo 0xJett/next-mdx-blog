@@ -23,7 +23,7 @@ function MenuContentRenderer({ menu }: { menu: Pick<Menu, "title" | "icon"> }) {
 
 export default function MenuList() {
   return (
-    <NavigationMenu viewport={false}>
+    <NavigationMenu>
       <NavigationMenuList>
         {MENUS.map((menu) => (
           <NavigationMenuItem key={menu.title}>
