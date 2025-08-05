@@ -10,6 +10,7 @@ export const SITE_CONFIG: SiteConfig = {
   description: "A blog powered by Next.js and MDX",
   author: {
     name: "0xJett",
+    url: 'https://github.com/0xJett'
   },
 };
 

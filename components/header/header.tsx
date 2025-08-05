@@ -2,11 +2,10 @@ import { SITE_CONFIG } from "@/configurations";
 import Link from "next/link";
 import { ModeToggle } from "../theme/mode-toggle";
 import MenuList from "./menu-list";
-import SocialMedia from "./social-media";
 
-export default function Navbar() {
+export default function Header() {
   return (
-    <header className="flex justify-between items-center">
+    <header className="flex justify-between items-center py-2">
       <Link href="/">
         <h1>{SITE_CONFIG.title}</h1>
       </Link>
@@ -14,7 +13,7 @@ export default function Navbar() {
       <MenuList />
 
       <div className="flex items-center gap-1">
-        <SocialMedia />
+        {/* <SocialMedia /> */}
         <ModeToggle />
       </div>
     </header>
