@@ -1,10 +1,7 @@
 import {
   Archive,
-  ChartColumnStacked,
   Info,
-  Link,
-  PenTool,
-  Tag,
+  Link
 } from "lucide-react";
 import { Menu, SiteConfig, SocialMediaLinks } from "./definitions";
 
@@ -18,13 +15,9 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const MENUS: Array<Menu> = [
   {
-    title: "Article",
-    icon: PenTool,
-    children: [
-      { title: "Archives", link: "/archive", icon: Archive },
-      { title: "Categories", link: "/category", icon: ChartColumnStacked },
-      { title: "Tags", link: "/tag", icon: Tag },
-    ],
+    title: "Archives",
+    link: "/archives",
+    icon: Archive,
   },
   {
     title: "About",
