@@ -1,7 +1,3 @@
-import {
-  Archive,
-  Info
-} from "lucide-react";
 import { Menu, SiteConfig, SocialMediaLinks } from "./definitions";
 
 export const SITE_CONFIG: SiteConfig = {
@@ -14,16 +10,16 @@ export const SITE_CONFIG: SiteConfig = {
 };
 
 export const MENUS: Array<Menu> = [
-  {
-    title: "Archives",
-    link: "/archives",
-    icon: Archive,
-  },
-  {
-    title: "About",
-    link: "/about",
-    icon: Info,
-  },
+  // {
+  //   title: "Archives",
+  //   link: "/archives",
+  //   icon: Archive,
+  // },
+  // {
+  //   title: "About",
+  //   link: "/about",
+  //   icon: Info,
+  // },
   // {
   //   title: "Friends",
   //   link: "/friends",

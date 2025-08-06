@@ -21,7 +21,6 @@ export type FrontMatter = {
   keywords?: string[];
   author?: string;
   createdAt: string;
-  updatedAt: string;
 };
 
 export interface ArticleMeta {

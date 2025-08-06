@@ -24,7 +24,6 @@ Below are the supported params, all of the params are optional, but you'd better
 |title|string|''||
 |description|string|''||
 |createdAt|string|''||
-|updatedAt|string|''|to sort the articles by updated time, manually set this.|
 
 ## Running Locally
 

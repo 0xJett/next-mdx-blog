@@ -1,4 +1,4 @@
-import { Article, ArticleMeta, FrontMatter } from "@/definitions";
+import { Article, FrontMatter } from "@/definitions";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
@@ -42,11 +42,11 @@ export function getArticleData(slug: string): Article {
 }
 
 // get All local articles metadata
-export function getAllArticles(): ArticleMeta[] {
+export function getAllArticles(): Article[] {
   const slugs = getAllArticleSlugs();
 
   return slugs.map((slug) => {
-    const { frontmatter } = getArticleData(slug);
-    return { slug, frontmatter };
+    const { frontmatter, content } = getArticleData(slug);
+    return { slug, frontmatter, content };
   });
 }
