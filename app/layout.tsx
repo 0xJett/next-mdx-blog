@@ -1,6 +1,8 @@
 import Footer from "@/components/footer/footer";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { DEFAULT_METADATA } from "@/constants";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Noto_Serif_SC, Roboto_Mono, Roboto_Serif } from "next/font/google";
 import Header from "../components/header/header";
@@ -18,6 +20,7 @@ const robotoMono = Roboto_Mono({
 
 const notoSerifSC = Noto_Serif_SC({
   variable: "--font-noto-serif-sc",
+  preload: false,
 });
 
 export const metadata: Metadata = DEFAULT_METADATA;
@@ -44,6 +47,9 @@ export default function RootLayout({
 
           <Footer />
         </ThemeProvider>
+
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

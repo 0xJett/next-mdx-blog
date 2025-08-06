@@ -1,3 +1,5 @@
+import MDXH1 from "@/components/mdx/heading1";
+import MDXLink from "@/components/mdx/link";
 import { DEFAULT_METADATA } from "@/constants";
 import { getAllArticleSlugs, getArticleData } from "@/lib/mdxUtils";
 import { Metadata } from "next";
@@ -49,7 +51,16 @@ export default async function Page({
       scope: frontmatter,
     };
 
-    return <MDXRemote source={content} options={options} />;
+    return (
+      <MDXRemote
+        source={content}
+        options={options}
+        components={{
+          a: MDXLink,
+          h1: MDXH1,
+        }}
+      />
+    );
   } catch (error) {
     return notFound();
   }
