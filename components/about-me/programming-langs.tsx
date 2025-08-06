@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function ProgrammingLangs() {
   return (
-    <ul className="flex items-center">
+    <ul className="flex items-center !pl-0">
       {PROGRAMMING_LANGS.map((lang) => (
-        <li className="list-none" key={lang.title}>
+        <li className="!list-none" key={lang.title}>
           <Image
             title={lang.title}
             alt={lang.title}

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function SocialMedia() {
   if (SOCIAL_MEDIA_LINKS.length > 0) {
     return (
-      <ul className="flex items-center gap-1">
+      <ul className="flex items-center gap-1 !pl-0">
         {SOCIAL_MEDIA_LINKS.map(({ text, icon, url }) => {
           const Icon = icon;
 
