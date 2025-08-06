@@ -8,10 +8,12 @@ export type SiteConfig = {
   author?: Author;
 };
 
-export type SocialMediaLinks = {
-  github?: string;
-  email?: string;
+export type SocialMediaInfo = {
+  url: string;
+  text: string;
+  icon: LucideIcon;
 };
+
 /** ---end--- */
 
 /** article related */

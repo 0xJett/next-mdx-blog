@@ -15,7 +15,7 @@ function ArticleOverviewItem({
   frontmatter,
 }: Pick<Article, "slug" | "frontmatter">) {
   return (
-    <Card>
+    <Card className="border-none shadow-none">
       <CardHeader>
         <CardTitle>
           <Link className="underline" href={`/article/${slug}`}>
@@ -26,9 +26,11 @@ function ArticleOverviewItem({
           Created At {dayjs(frontmatter.createdAt).format("YYYY-MM-DD")}
         </CardDescription>
       </CardHeader>
-      <CardContent className="line-clamp-3">
-        {frontmatter.description}
-      </CardContent>
+      {frontmatter.description && (
+        <CardContent className="line-clamp-3">
+          {frontmatter.description}
+        </CardContent>
+      )}
     </Card>
   );
 }
@@ -43,7 +45,7 @@ export default function ArticleList() {
 
     if (list.length > 0) {
       return (
-        <ul>
+        <ul className="space-y-4">
           {list.map((item) => (
             <li key={`${item.slug} + ${item.frontmatter.createdAt}`}>
               <ArticleOverviewItem {...item} />
