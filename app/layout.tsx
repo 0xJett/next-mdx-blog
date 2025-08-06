@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoSerif.variable} ${robotoMono.variable} ${notoSerifSC.variable} antialiased flex flex-col min-h-screen mx-auto overflow-hidden px-4 md:max-w-6xl md:px-24 w-screen`}
+        className={`${robotoSerif.variable} ${robotoMono.variable} ${notoSerifSC.variable} antialiased flex flex-col min-h-screen !mx-auto overflow-hidden px-4 md:max-w-6xl md:px-24 w-screen`}
       >
         <ThemeProvider
           attribute="class"
