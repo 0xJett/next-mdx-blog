@@ -1,4 +1,4 @@
-import { Article, ArticleMeta } from "@/definitions";
+import { Article, ArticleMeta, FrontMatter } from "@/definitions";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
@@ -32,19 +32,12 @@ export function getArticleData(slug: string): Article {
   if (!filePath) throw new Error(`Post not found: ${slug}`);
 
   const fileContent = fs.readFileSync(filePath, "utf8");
-  const { data: frontmatter, content } = matter(fileContent);
-
-  // get file createdAt & updatedAt
-  const stats = fs.statSync(filePath);
-  const createdAt = stats.birthtimeMs;
-  const updatedAt = stats.mtimeMs;
+  const { data, content } = matter(fileContent);
 
   return {
     slug,
-    frontmatter,
+    frontmatter: data as FrontMatter,
     content,
-    createdAt,
-    updatedAt,
   };
 }
 
@@ -53,7 +46,7 @@ export function getAllArticles(): ArticleMeta[] {
   const slugs = getAllArticleSlugs();
 
   return slugs.map((slug) => {
-    const { frontmatter, createdAt, updatedAt } = getArticleData(slug);
-    return { slug, frontmatter, createdAt, updatedAt };
+    const { frontmatter } = getArticleData(slug);
+    return { slug, frontmatter };
   });
 }

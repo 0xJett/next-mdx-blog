@@ -1,7 +1,6 @@
 import {
   Archive,
-  Info,
-  Link
+  Info
 } from "lucide-react";
 import { Menu, SiteConfig, SocialMediaLinks } from "./definitions";
 
@@ -25,11 +24,11 @@ export const MENUS: Array<Menu> = [
     link: "/about",
     icon: Info,
   },
-  {
-    title: "Friends",
-    link: "/friends",
-    icon: Link,
-  },
+  // {
+  //   title: "Friends",
+  //   link: "/friends",
+  //   icon: Link,
+  // },
 ];
 
 export const SOCIAL_MEDIA_LINKS: SocialMediaLinks = {

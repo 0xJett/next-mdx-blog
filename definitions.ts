@@ -20,13 +20,13 @@ export type FrontMatter = {
   description?: string;
   keywords?: string[];
   author?: string;
+  createdAt: string;
+  updatedAt: string;
 };
 
 export interface ArticleMeta {
   slug: string;
   frontmatter: FrontMatter;
-  createdAt: number;
-  updatedAt: number;
 }
 
 export interface Article extends ArticleMeta {
