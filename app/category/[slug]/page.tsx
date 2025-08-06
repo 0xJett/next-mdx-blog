@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Category</div>;
+  return <div>Category page is under development</div>;
 }

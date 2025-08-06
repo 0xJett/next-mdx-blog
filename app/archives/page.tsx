@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Archives page is still under development</div>;
+  return <div>Archives page is under development</div>;
 }

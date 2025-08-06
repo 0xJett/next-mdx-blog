@@ -33,7 +33,7 @@ export default function PageContainer({ children }: PageContainerProps) {
         duration: 0.8,
         ease: [0.25, 0.46, 0.45, 0.94],
       }}
-      className="min-h-screen"
+      className="h-full overflow-hidden"
     >
       {children}
     </motion.div>

@@ -5,7 +5,7 @@ import MenuList from "./menu-list";
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center py-2">
+    <header className="flex justify-between items-center py-2 mx-auto px-4 md:max-w-6xl md:px-24 w-screen">
       <Link href="/">
         <h1>{SITE_CONFIG.title}</h1>
       </Link>

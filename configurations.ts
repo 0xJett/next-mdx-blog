@@ -1,9 +1,9 @@
-import { Archive, Github, Info, Link, Mail, Shapes } from "lucide-react";
-import { Menu, SiteConfig, SocialMediaInfo } from "./definitions";
+import { Archive, Info, Link, Shapes } from "lucide-react";
+import { Menu, SiteConfig } from "./definitions";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Jett's Blog",
-  description: "A blog powered by Next.js and MDX",
+  title: "Next MDX Blog",
+  description: "A blog system powered by Next.js and MDX",
   author: {
     name: "0xJett",
     url: "https://github.com/0xJett",
@@ -31,18 +31,5 @@ export const MENUS: Array<Menu> = [
     title: "Friends",
     link: "/friends",
     icon: Link,
-  },
-];
-
-export const SOCIAL_MEDIA_LINKS: SocialMediaInfo[] = [
-  {
-    text: "Mail Me",
-    url: "mailto:0xjettzhang@gmail.com",
-    icon: Mail,
-  },
-  {
-    text: "Github",
-    url: "https://github.com/0xJett",
-    icon: Github,
   },
 ];

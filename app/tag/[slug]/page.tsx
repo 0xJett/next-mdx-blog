@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Tag</div>;
+  return <div>Tag page is under development</div>;
 }

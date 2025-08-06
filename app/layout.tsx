@@ -1,9 +1,7 @@
 import Footer from "@/components/footer/footer";
-import PageContainer from "@/components/page-container";
+import MainLayout from "@/components/main-layout/main-layout";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { DEFAULT_METADATA } from "@/constants";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Noto_Serif_SC, Roboto_Mono, Roboto_Serif } from "next/font/google";
 import Header from "../components/header/header";
@@ -34,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoSerif.variable} ${robotoMono.variable} ${notoSerifSC.variable} antialiased flex flex-col h-screen !mx-auto overflow-hidden px-4 md:max-w-6xl md:px-24 w-screen`}
+        className={`${robotoSerif.variable} ${robotoMono.variable} ${notoSerifSC.variable} antialiased flex flex-col h-screen overflow-hidden w-screen`}
       >
         <ThemeProvider
           attribute="class"
@@ -44,15 +42,10 @@ export default function RootLayout({
         >
           <Header />
 
-          <main className="flex-1 py-4 overflow-auto">
-            <PageContainer>{children}</PageContainer>
-          </main>
+          <MainLayout>{children}</MainLayout>
 
           <Footer />
         </ThemeProvider>
-
-        <SpeedInsights />
-        <Analytics />
       </body>
     </html>
   );
