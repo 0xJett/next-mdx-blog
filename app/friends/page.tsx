@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>friends</div>;
+  return <div>Friends page is still under development</div>;
 }

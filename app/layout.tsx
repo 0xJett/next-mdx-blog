@@ -1,14 +1,11 @@
 import Footer from "@/components/footer/footer";
+import PageContainer from "@/components/page-container";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { DEFAULT_METADATA } from "@/constants";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import {
-  Noto_Serif_SC,
-  Roboto_Mono,
-  Roboto_Serif
-} from "next/font/google";
+import { Noto_Serif_SC, Roboto_Mono, Roboto_Serif } from "next/font/google";
 import Header from "../components/header/header";
 import "./globals.css";
 
@@ -37,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${robotoSerif.variable} ${robotoMono.variable} ${notoSerifSC.variable} antialiased flex flex-col min-h-screen mx-auto overflow-hidden px-4 md:max-w-5xl md:px-24 w-screen`}
+        className={`${robotoSerif.variable} ${robotoMono.variable} ${notoSerifSC.variable} antialiased flex flex-col min-h-screen mx-auto overflow-hidden px-4 md:max-w-6xl md:px-24 w-screen`}
       >
         <ThemeProvider
           attribute="class"
@@ -47,7 +44,9 @@ export default function RootLayout({
         >
           <Header />
 
-          <main className="flex-1 py-4">{children}</main>
+          <PageContainer>
+            <main className="flex-1 py-4">{children}</main>
+          </PageContainer>
 
           <Footer />
         </ThemeProvider>

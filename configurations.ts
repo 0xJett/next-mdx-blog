@@ -1,4 +1,4 @@
-import { Github, Info, Mail } from "lucide-react";
+import { Archive, Github, Info, Link, Mail, Shapes } from "lucide-react";
 import { Menu, SiteConfig, SocialMediaInfo } from "./definitions";
 
 export const SITE_CONFIG: SiteConfig = {
@@ -11,21 +11,27 @@ export const SITE_CONFIG: SiteConfig = {
 };
 
 export const MENUS: Array<Menu> = [
-  // {
-  //   title: "Archives",
-  //   link: "/archives",
-  //   icon: Archive,
-  // },
+  {
+    title: "Archives",
+    link: "/archives",
+    icon: Archive,
+  },
+  {
+    title: "Projects",
+    link: "/projects",
+    icon: Shapes,
+  },
   {
     title: "About",
     link: "/about",
     icon: Info,
   },
-  // {
-  //   title: "Friends",
-  //   link: "/friends",
-  //   icon: Link,
-  // },
+
+  {
+    title: "Friends",
+    link: "/friends",
+    icon: Link,
+  },
 ];
 
 export const SOCIAL_MEDIA_LINKS: SocialMediaInfo[] = [
