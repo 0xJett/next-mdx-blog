@@ -1,6 +1,6 @@
 # next-mdx-blog
 
-This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/home), [Tailwind CSS](https://tailwindcss.com/), [Supabase on Vercel](https://vercel.com/jett-projects/~/integrations/supabase)(Optional if you want to manage your articles in a CMS).
+This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https://vercel.com/home), [Tailwind CSS](https://tailwindcss.com/), [Supabase on Vercel](https://vercel.com/docs/integrations)(Optional if you want to manage your articles in a CMS).
 
 ## Features
 
@@ -19,11 +19,13 @@ This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https
 
 You can config you site manually.
 Below are the supported params, all of the params are optional, but you'd better set the author param.
-|key|type|default value|remark|
-|---|---|---|---|
-|title|string|''||
-|description|string|''||
-|createdAt|string|''||
+|key|type|remark|
+|---|---|---|
+|title|string|better to have for SEO|
+|description|string|better to have for SEO|
+|keywords|string[]|better to have for SEO|
+|author|string|fallback to SITE_CONFIG.author in configuration.ts|
+|createdAt|string|to sort articles from newest to oldest, set it|
 
 ## Running Locally
 
@@ -34,7 +36,7 @@ pnpm install
 pnpm dev
 ```
 
-After these steps, you can visit the project on `localhost:3000`, also you can visit `localhost:3000/article/example` to see the example article.
+After these steps, you can visit the project on `localhost:3000`, also you can visit `localhost:3000/article/example1` to see the example article.
 
 ## Write Article Locally
 
@@ -47,8 +49,9 @@ You can set the article params on the top of the article by using this grammar, 
 ---
 title: Example article
 description: This is the description of the article
-keywords: ["example", "english"]
+keywords: ["example"]
 author: 0xJett
+createdAt: 2025-08-07 09:48:00 GMT+0800
 ---
 ```
 

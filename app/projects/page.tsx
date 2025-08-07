@@ -1,3 +1,3 @@
 export default function Page() {
-  return <div>Projects page is under development</div>;
+  return <div>Showcase your project here~</div>;
 }

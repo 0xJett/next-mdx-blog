@@ -16,7 +16,7 @@ function ArticleOverviewItem({
 }: Pick<Article, "slug" | "frontmatter">) {
   return (
     <Card className="border-none shadow-none">
-      <CardHeader>
+      <CardHeader className="px-0">
         <CardTitle>
           <Link className="underline" href={`/article/${slug}`}>
             {frontmatter.title}
@@ -27,7 +27,7 @@ function ArticleOverviewItem({
         </CardDescription>
       </CardHeader>
       {frontmatter.description && (
-        <CardContent className="line-clamp-3">
+        <CardContent className="line-clamp-3 px-0">
           {frontmatter.description}
         </CardContent>
       )}

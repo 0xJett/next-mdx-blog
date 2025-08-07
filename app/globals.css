@@ -134,18 +134,15 @@
       sans-serif;
   }
 
-  /* 中文字体样式 */
   .font-chinese {
     font-family: var(--font-noto-serif-sc), var(--font-roboto-serif), system-ui,
       sans-serif;
   }
 
-  /* 拉丁文字体样式 */
   .font-latin {
     font-family: var(--font-roboto-serif), system-ui, sans-serif;
   }
 
-  /* 自动检测中文字符并使用中文字体 */
   :lang(zh),
   :lang(zh-CN),
   :lang(zh-TW),

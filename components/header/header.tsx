@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="flex justify-between items-center py-2 mx-auto px-4 md:max-w-6xl md:px-24 w-screen">
       <Link href="/">
-        <h1>{SITE_CONFIG.title}</h1>
+        <h1 className="text-2xl font-semibold">{SITE_CONFIG.title}</h1>
       </Link>
 
       <MenuList />

@@ -8,12 +8,6 @@ export type SiteConfig = {
   author?: Author;
 };
 
-export type SocialMediaInfo = {
-  url: string;
-  text: string;
-  icon: LucideIcon;
-};
-
 /** ---end--- */
 
 /** article related */
