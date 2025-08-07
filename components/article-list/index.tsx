@@ -15,8 +15,8 @@ function ArticleOverviewItem({
   frontmatter,
 }: Pick<Article, "slug" | "frontmatter">) {
   return (
-    <Card className="border-none shadow-none py-2 md:py-6">
-      <CardHeader className="px-0">
+    <Card className="border-none shadow-none py-4 md:py-6">
+      <CardHeader className="px-2 md:px-4">
         <CardTitle>
           <Link className="underline" href={`/article/${slug}`}>
             {frontmatter.title}
@@ -27,7 +27,7 @@ function ArticleOverviewItem({
         </CardDescription>
       </CardHeader>
       {frontmatter.description && (
-        <CardContent className="line-clamp-3 px-0">
+        <CardContent className="line-clamp-3 px-2 md:px-4">
           {frontmatter.description}
         </CardContent>
       )}
