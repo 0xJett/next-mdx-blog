@@ -10,7 +10,9 @@ export default function TypographyLayout({
   className?: ClassNameValue;
 }) {
   return (
-    <article className={cn("prose-neutral lg:prose-xl mx-auto", className)}>
+    <article
+      className={cn("prose-neutral prose-sm lg:prose-lg mx-auto", className)}
+    >
       {children}
     </article>
   );

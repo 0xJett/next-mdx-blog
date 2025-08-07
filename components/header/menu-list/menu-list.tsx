@@ -49,7 +49,7 @@ export default function MenuList() {
       <DropdownMenu onOpenChange={setOpen}>
         <DropdownMenuTrigger className="md:hidden order-2">
           {!mounted ? (
-            <MenuIcon className="absolute inset-0" />
+            <span className="size-6"></span>
           ) : (
             <div className="relative w-6 h-6">
               <MenuIcon
