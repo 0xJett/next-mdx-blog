@@ -2,7 +2,7 @@ import Footer from "@/components/footer/footer";
 import MainLayout from "@/components/main-layout/main-layout";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { DEFAULT_METADATA } from "@/constants";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Serif_SC, Roboto_Mono, Roboto_Serif } from "next/font/google";
 import Header from "../components/header/header";
 import "./globals.css";
@@ -23,6 +23,13 @@ const notoSerifSC = Noto_Serif_SC({
 });
 
 export const metadata: Metadata = DEFAULT_METADATA;
+
+export const viewport: Viewport = {
+  userScalable: false,
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
+};
 
 export default function RootLayout({
   children,
