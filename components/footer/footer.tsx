@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col md:flex-row items-center md:justify-between py-2 mx-auto px-4 md:max-w-6xl md:px-24 w-screen">
+    <footer className="flex flex-col md:flex-row items-center md:justify-between py-2 mx-auto px-4 md:max-w-6xl md:px-16 w-screen text-xs md:text-sm">
       <span>
         Copyright ©2025-{dayjs().year()}{" "}
         {SITE_CONFIG.author?.url ? (

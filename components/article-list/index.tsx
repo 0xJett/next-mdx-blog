@@ -15,7 +15,7 @@ function ArticleOverviewItem({
   frontmatter,
 }: Pick<Article, "slug" | "frontmatter">) {
   return (
-    <Card className="border-none shadow-none">
+    <Card className="border-none shadow-none py-2 md:py-6">
       <CardHeader className="px-0">
         <CardTitle>
           <Link className="underline" href={`/article/${slug}`}>
