@@ -6,14 +6,11 @@ This is a blog system build with: [Next.js](https://nextjs.org/), [Vercel](https
 
 - [x] write MD & MDX articles directly in articles directory
 - [x] frontmatter supported
+- [ ] support CMS managed MD & MDX article
+- [ ] archives
 - [ ] category
 - [ ] tag
-- [ ] archiving
 - [x] dark mode
-- [ ] multiple language
-- [ ] multiple templates
-- [ ] private article
-- [ ] support CMS managed MD & MDX article
 
 ## Configurations
 
